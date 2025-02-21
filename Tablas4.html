@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Teléfono</title>
+    <style>
+        h1{
+            color: black;
+            font-style: italic;
+            text-shadow: -3px 3px 0 lightgrey;
+        }
+        caption{
+            font-size: 25px;
+            font-weight: bold;
+            text-shadow: -3px 3px 0 lightgrey;
+        }
+        @keyframes scaleIn {
+            from{
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        table{
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden; /* Para que los bordes redondeados afecten toda la tabla */
+            animation: scaleIn 0.6s ease-out;
+        }
+        thead{
+            color: blue;
+            font-size: 20px;
+            background-color: lightgray;
+        }
+        tfoot{
+            color: crimson;
+            font-size: 13px;
+        }
+        .pie:hover{
+            background-color: darkseagreen;
+        }
+        .detalle{
+            font-size: 20px;
+            font-weight: lighter;
+            background-color: beige;
+        }
+        .cabecera{
+            color: blueviolet;
+            background-color: aliceblue;
+        }
+        td{
+            text-align: center;
+            transition: background-color 0.5s ease-in-out; /* Agrega una transición suave */
+        }
+        td:hover{
+            background-color: cyan;
+            cursor: cell;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1);}     
+            50% { transform: scale(1.5);}
+            100% { transform: scale(1);}
+        }
+        td:active{
+            animation: pulse 0.3s ease;
+        }
+        .total{
+            text-align: right;
+            background-color: lightpink;
+        }
+        .periodo{
+            font-size: 20px;
+            background-color: bisque;
+        }
+        .periodo:hover{
+            background-color: chartreuse;
+        }
+        .textoTotal{
+            background-color: lightblue;
+        }
+        tr:nth-child(even){
+            background-color: antiquewhite;
+        }
+        tr:hover{
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1><em>Extremeña de Teléfonos S.A.</em></h1>
+    <table border="1">
+        <caption>Factura Detallada</caption>
+        <!-- cabecera de la tabla -->
+         <thead>
+            <tr>
+                <th colspan="5">EXTREMEÑA DE TELÉFONOS</th>
+            </tr>
+         </thead>
+         <!-- fin de cabecera -->
+
+         <!-- pie de la tabla -->
+          <tfoot>
+            <tr>
+                <td colspan="5" class="pie">
+                    <em>Extremeña de Teléfonos le informa que puede llamar al número gratuito 666 para cualquier duda o sugerencia que tenga acerca de esta factura o de nuestros servicios. </em>
+                </td>
+            </tr>
+          </tfoot>
+          <!-- fin de pie -->
+
+          <!-- cuerpo de la tabla -->
+           <tbody>
+            <tr>
+                <th colspan="5" class="detalle">Detalle de cuotas</th>
+            </tr>
+            <tr class="cabecera">
+                <th>PERIODO</th>
+                <th>CONCEPTO</th>
+                <th>IMPORTE</th>
+                <th colspan="2">DESCUENTO</th>
+            </tr>
+            <tr>
+                <td rowspan="3" class="periodo">01/05/13 - 01/07/13</td>
+                <td>Servicio de identificación de llamadas</td>
+                <td>12 €</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Línea individual</td>
+                <td>14 €</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Bono ciudad</td>
+                <td>10 €</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="textoTotal"><b>TOTAL</b></td>
+                <td colspan="3" class="total"><strong>36 €</strong></td>
+            </tr>
+            <tr>
+                <th colspan="5" class="detalle">Detalle de consumos</th>
+            </tr>
+
+            <tr class="cabecera">
+                <th>CONCEPTO</th>
+                <th>LLAMADAS</th>
+                <th>DURACIÓN</th>
+                <th>IMPORTE</th>
+                <th>DESCUENTO</th>
+            </tr>
+            <tr>
+                <td>Llamada internacional</td>
+                <td>23</td>
+                <td>10m 23s</td>
+                <td>13 €</td>
+                <td>0</td>
+
+            </tr>
+            <tr>
+                <td>Llamada metropolitana</td>
+                <td>23</td>
+                <td>10m 23s</td>
+                <td>3,5 €</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td colspan="2"class="textoTotal"><b>TOTAL</b></td>
+                <td colspan="3" class="total"><strong>16,5 €</strong></td>
+            </tr>
+
+
+           </tbody>
+           <!-- fin cuerpo de la tabla -->
+
+    </table>
+    
+</body>
+</html>
